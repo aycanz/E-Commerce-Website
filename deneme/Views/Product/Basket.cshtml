@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Basket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="~/css/Basket.css">
+</head>
+<body>
+    <section class="section cart" aria-label="cart">
+        <div class="container">
+            <h2>My Cart</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-summary">
+                <p>Total: <span id="totalPrice">$0</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceContainer = document.getElementById('totalPrice');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            let cartHtml = '<table>';
+            cartHtml += '<tr><th>Product</th><th>Quantity</th><th>Price</th><th>Total</th><th></th></tr>';
+            let totalPrice = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                cartHtml += `
+                                    <tr>
+                                        <td>${item.name}</td>
+                                        <td>${item.quantity}</td>
+                                        <td>$${item.price.toFixed(2)}</td>
+                                        <td>$${itemTotal.toFixed(2)}</td>
+                                        <td><button onclick="removeFromCart(${index})">Delete</button></td>
+                                    </tr>
+                                `;
+            });
+            cartHtml += '</table>';
+
+            cartItemsContainer.innerHTML = cartHtml;
+            totalPriceContainer.innerText = `$${totalPrice.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</body>
+</html>

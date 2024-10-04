@@ -1,0 +1,20 @@
+﻿@using EntityLayer
+@model List<Tbl_Category>
+@{
+    Layout = null;
+}
+ 
+<table>
+    <tr>
+        <th>ID</th>
+        <th>ID</th>
+        <th>ID</th>
+
+    </tr>
+
+    @foreach(var item in  Model){
+
+        <tr> @item.CategoryId</tr>
+    }
+
+</table>

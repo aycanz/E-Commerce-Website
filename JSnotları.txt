@@ -1,0 +1,90 @@
+localStorage, modern web tarayýcýlarýnda bulunan bir API'dir ve web uygulamalarýnýn kullanýcý tarafýnda veri saklamasýna olanak tanýr.
+localStorage, verilerin tarayýcý kapatýlsa bile kalýcý olarak saklanmasýný saðlar ve bu verilere daha sonra eriþilebilir.
+Aþaðýda localStorage hakkýnda daha fazla bilgi ve bazý temel iþlevlerin nasýl kullanýlacaðýný anlatan örnekler verilmiþtir:
+
+localStorage Temel Özellikleri
+Kalýcý Depolama: localStorage verileri, tarayýcý veya sekme kapatýldýktan sonra bile silinmez. Kullanýcý verileri manuel olarak silmedikçe veya JavaScript kodu kullanýlarak temizlenmedikçe saklanmaya devam eder.
+Anahtar-Deðer Çifti: localStorage, verileri anahtar-deðer çiftleri olarak saklar. Her veri öðesi, bir anahtar ve bir deðerle iliþkilendirilir.
+String Formatý: localStorage sadece string (metin) formatýnda veri saklar. Diðer veri tiplerini saklamak için JSON ile string'e çevrilmeleri gerekir.
+localStorage Kullanýmý
+Veri Saklama
+
+// Bir anahtar ve deðer çifti olarak veri saklama
+localStorage.setItem('username', 'chatgpt');
+
+Veri Okuma
+
+// Belirli bir anahtara karþýlýk gelen veriyi okuma
+const username = localStorage.getItem('username');
+console.log(username); // 'chatgpt'
+Veri Silme
+ 
+// Belirli bir anahtara karþýlýk gelen veriyi silme
+localStorage.removeItem('username');
+
+Tüm Verileri Silme
+ 
+// localStorage'daki tüm verileri temizleme
+localStorage.clear();
+
+*******************************************************************
+JSON.parse() fonksiyonu, JSON formatýnda bir metni (string) alýr ve bu metni, JavaScript nesnesine veya dizisine dönüþtürür.
+
+
+Temel Kullaným
+Örneðin, JSON formatýnda bir kullanýcý bilgisi saklý olan metni JavaScript nesnesine dönüþtürelim:
+ 
+const jsonString = '{"name": "chatgpt", "age": 2024}';
+const user = JSON.parse(jsonString);
+
+console.log(user.name); // 'chatgpt'
+console.log(user.age);  // 2024
+
+Neden JSON.parse Kullanýlýr?
+Veri Alma: Sunucudan alýnan veriler genellikle JSON formatýndadýr. Bu verileri JavaScript nesnesine dönüþtürmek için JSON.parse kullanýlýr.
+LocalStorage: localStorage sadece string formatýnda veri saklar. Karmaþýk verileri (nesne veya dizi gibi) saklamak için
+JSON formatýna dönüþtürülüp saklanýr. Bu verileri geri alýp kullanabilmek için tekrar nesneye dönüþtürmek gereklidir.
+Kolay Veri Ýþleme: JSON, nesne ve dizi yapýlarýnda veri saklamayý kolaylaþtýrýr. Bu verileri JavaScript kodunda kolayca
+iþlemek için JSON.parse kullanarak nesne veya dizi haline getirmek gerekir.
+
+
+
+
+
+<h2>Sepetim</h2>
+
+<div id="cartItems"></div>
+
+<script>
+    // Sepet verilerini yükleyen ve görüntüleyen fonksiyon
+    function loadCart() {
+        // LocalStorage'dan 'cart' anahtarýna sahip veriyi al ve JSON formatýnda çözümle
+        // Eðer 'cart' anahtarý yoksa boþ bir dizi döndür
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // 'cartItems' id'sine sahip HTML elementini seç
+        const cartItemsContainer = document.getElementById('cartItems');
+
+        // Eðer sepet boþsa
+        if (cart.length === 0) {
+            // 'cartItemsContainer' içine sepetin boþ olduðunu belirten bir mesaj ekle
+            cartItemsContainer.innerHTML = '<p>Sepetiniz boþ.</p>';
+            return; // Fonksiyonu sonlandýr
+        }
+
+        // Sepetteki ürünleri liste halinde gösterecek HTML kodunu oluþtur
+        let cartHtml = '<ul>';
+        // Sepetteki her bir ürün için
+        cart.forEach(item => {
+            // Ürün adýný, miktarýný ve fiyatýný liste elemaný olarak ekle
+            cartHtml += `<li>${item.name} - ${item.quantity} x $${item.price}</li>`;
+        });
+        cartHtml += '</ul>'; // Listeyi kapat
+
+        // 'cartItemsContainer' içine oluþturulan HTML kodunu ekle
+        cartItemsContainer.innerHTML = cartHtml;
+    }
+
+    // Sayfa tamamen yüklendiðinde 'loadCart' fonksiyonunu çaðýr
+    document.addEventListener('DOMContentLoaded', loadCart);
+</script>

@@ -1,0 +1,229 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+nav {
+    background: #ffffff;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+label.logo {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Alanı eşit şekilde paylaşır */
+}
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+        nav ul li a {
+            color: black;
+            font-size: 18px;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+            nav ul li a:hover {
+                color: #ff5151;
+                background-color: #f1f1f1;
+            }
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #f4354e;
+    text-decoration: none;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 925px) {
+    label.logo {
+        font-size: 24px;
+        padding-left: 10px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    #check:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+        nav ul li a {
+            font-size: 18px;
+        }
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+    .icons i {
+        font-size: 20px;
+        color: black;
+        margin-left: 25px;
+        cursor: pointer;
+    }
+   
+
+section{
+    background:url()
+}
+
+.top-header {
+    background: #f8f9fa;
+    padding: 1px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+    .top-header .contact-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .top-header .contact-info .left-info {
+            color: #333;
+        }
+
+        .top-header .contact-info .right-info a {
+            color: #333;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+ 
+
+.logo-img {
+    width: 40px; /* Genişlik */
+    height: 40px; /* Yükseklik */
+    margin-right:10px; /* Metin ile logo arasındaki boşluk */
+    margin-left: 20px; /* Logo ile sol kenar arasındaki boşluk */
+}
+.hero__item {
+    background-image: url('images/homepage-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 10px;
+}
+
+    .box h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #333;
+        text-transform: capitalize;
+    }
+
+    .box a {
+        display: block;
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .box a:hover {
+            color: #000;
+        }
+
+.credit {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #ddd;
+}
+
+    .credit sapan {
+        color: #000;
+        font-weight: bold;
+    }
+
+@media (max-width: 768px) {
+    .box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        margin-bottom: 20px;
+    }
+}
+
+

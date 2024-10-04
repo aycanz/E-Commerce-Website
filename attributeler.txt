@@ -1,0 +1,7 @@
+ekleme iþlemi yapýlýrkýne httpget ve post attributelerinin 
+tanýmlandýðý metodlarýn isimleri ayný olmak zorunda
+
+
+httpget-> sayfa yüklenince
+httppost-> sayfada buton tetiklenince
+

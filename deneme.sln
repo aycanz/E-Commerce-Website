@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "deneme", "deneme\deneme.csproj", "{7EBC9CDF-4162-4A4F-81CF-F186308D7581}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccesesLayer", "DataAccesesLayer\DataAccesesLayer.csproj", "{45EDBC1A-3AFE-4D69-8F9D-9342534286DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinnessLayer", "BusinnessLayer\BusinnessLayer.csproj", "{C250E738-4558-4C26-A5FC-C8549A2477E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{16F7802E-2B64-44AB-9908-022309D84AAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çözüm Öğeleri", "{A82D29CD-CD66-4A5A-BACE-A4B9D4B6B3C7}"
+	ProjectSection(SolutionItems) = preProject
+		about.txt = about.txt
+		attributeler.txt = attributeler.txt
+		JSnotları.txt = JSnotları.txt
+		kısayollar.txt = kısayollar.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBC9CDF-4162-4A4F-81CF-F186308D7581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC9CDF-4162-4A4F-81CF-F186308D7581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC9CDF-4162-4A4F-81CF-F186308D7581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC9CDF-4162-4A4F-81CF-F186308D7581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45EDBC1A-3AFE-4D69-8F9D-9342534286DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45EDBC1A-3AFE-4D69-8F9D-9342534286DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45EDBC1A-3AFE-4D69-8F9D-9342534286DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45EDBC1A-3AFE-4D69-8F9D-9342534286DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C250E738-4558-4C26-A5FC-C8549A2477E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C250E738-4558-4C26-A5FC-C8549A2477E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C250E738-4558-4C26-A5FC-C8549A2477E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C250E738-4558-4C26-A5FC-C8549A2477E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F7802E-2B64-44AB-9908-022309D84AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F7802E-2B64-44AB-9908-022309D84AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F7802E-2B64-44AB-9908-022309D84AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F7802E-2B64-44AB-9908-022309D84AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1E1757E-2F30-42CF-A82B-9917D519D594}
+	EndGlobalSection
+EndGlobal
